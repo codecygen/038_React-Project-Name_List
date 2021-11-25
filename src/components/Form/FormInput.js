@@ -3,13 +3,12 @@ import InputDiv from './InputDiv';
 import Button from '../Button/Button';
 import classes from './FormInput.module.css';
 
-const FormInput = () => {
-
+const FormInput = (props) => {
 
     return (
         <form className={classes.form}>
-            <InputDiv />
-            <InputDiv />
+            <InputDiv inputInfo={props.formTexts} />
+            <InputDiv inputInfo={props.formTexts} />
             <Button />
         </form>
     );
