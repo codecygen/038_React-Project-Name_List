@@ -1,16 +1,16 @@
 import React from 'react';
 import InputDiv from './InputDiv';
+import Button from '../Button/Button';
+import classes from './FormInput.module.css';
 
 const FormInput = () => {
 
 
     return (
-        <form>
+        <form className={classes.form}>
             <InputDiv />
             <InputDiv />
-            <div>
-                <button type="submit">Add User</button>
-            </div>
+            <Button />
         </form>
     );
 }

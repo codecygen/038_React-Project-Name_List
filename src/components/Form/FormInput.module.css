@@ -1,0 +1,8 @@
+.form {
+   margin: 5rem 8%;
+   height: 100%;
+   background-color: #222442;
+   padding: 1rem 5rem 3rem;
+   border-radius: 2rem;
+   box-sizing: border-box;
+}
