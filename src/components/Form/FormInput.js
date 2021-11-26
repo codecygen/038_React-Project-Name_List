@@ -5,11 +5,21 @@ import classes from './FormInput.module.css';
 
 const FormInput = (props) => {
 
+    const inputEntryHandler = (inputEntry, inputName) => {
+        console.log(inputEntry);
+        console.log(inputName);
+    }
+
     return (
         <form className={classes.form}>
-            <InputDiv inputInfo={props.formTexts} />
-            <InputDiv inputInfo={props.formTexts} />
-            <Button />
+            {props.formTexts.map(formText => (
+                <InputDiv 
+                    key={formText.key} 
+                    inputEntryFunc={inputEntryHandler} 
+                    formInfo={formText} 
+                />
+            ))}
+            <Button>Add User</ Button>
         </form>
     );
 }

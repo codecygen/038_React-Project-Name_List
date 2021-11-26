@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from './Button.module.css';
 
-const Button = () => {
+const Button = (props) => {
     return (
         <div className={classes.div}>
-            <button type="submit" className={classes.button}>Add User</button>
+            <button type="submit" className={classes.button}>{props.children}</button>
         </div>
     );
 }

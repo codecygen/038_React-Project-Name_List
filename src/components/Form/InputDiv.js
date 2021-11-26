@@ -3,11 +3,15 @@ import classes from './InputDiv.module.css';
 
 const InputDiv = (props) => {
 
+    // Lifts values from this file to FormInput.js
+    const inputChangeHandler = event => {
+        props.inputEntryFunc(event.target.value, props.formInfo.label)
+    }
 
     return (
         <div className={classes.div}>
-            <label>{props.inputInfo[0].label}</label>
-            <input type={props.inputInfo[0].input} />
+            <label>{props.formInfo.label}</label>
+            <input onChange={inputChangeHandler} type={props.formInfo.input} />
         </div>
     );
 }

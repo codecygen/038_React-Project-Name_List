@@ -6,20 +6,26 @@ function App() {
   const formTitles = [
     {
       label: 'Username',
-      input: 'text'
+      input: 'text',
+      key: 1
     },
 
     {
-      label: 'Age (Years)',
-      input: 'text'
+      label: 'Age',
+      input: 'text',
+      key: 2
+    },
+
+    {
+      label: 'Occupation',
+      input: 'text',
+      key: 3
     }
-  ]
+  ];
 
 
   return (
-    <div>
-      <FormInput formTexts={formTitles} />
-    </div>
+    <FormInput formTexts={formTitles} />
   );
 }
 
