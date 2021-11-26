@@ -10,15 +10,17 @@ const FormInput = (props) => {
         console.log(inputName);
     }
 
+    const allInputs = props.formTexts.map(formText => (
+        <InputDiv 
+            key={formText.key} 
+            inputEntryFunc={inputEntryHandler} 
+            formInfo={formText} 
+        />
+    ));
+
     return (
         <form className={classes.form}>
-            {props.formTexts.map(formText => (
-                <InputDiv 
-                    key={formText.key} 
-                    inputEntryFunc={inputEntryHandler} 
-                    formInfo={formText} 
-                />
-            ))}
+            {allInputs}
             <Button>Add User</ Button>
         </form>
     );
