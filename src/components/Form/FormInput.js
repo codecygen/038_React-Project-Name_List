@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InputDiv from './InputDiv';
 import Button from '../Button/Button';
 import classes from './FormInput.module.css';
+
+const entriesObject = {};
 
 const FormInput = () => {
 
@@ -23,12 +25,22 @@ const FormInput = () => {
           input: 'text',
           key: 3
         }
-      ];
+      ]; 
+
+    // entriesObject = { Username: '', Age: '', Occupation: '' }
+    for (const formTitle of formTitles) {
+      entriesObject[formTitle.label] = '';
+    }
+
+    const [userInput, setUserInput] = useState(entriesObject);
 
     const inputEntryHandler = (inputEntry, inputName) => {
-        console.log(inputEntry);
-        console.log(inputName);
+        setUserInput(prevState => {
+          return {...prevState, [inputName]: inputEntry};
+        });
     };
+
+    console.log(userInput);
 
     const formSubmitHandler = event => {
         event.preventDefault();
