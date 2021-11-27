@@ -3,7 +3,7 @@ import InputDiv from './InputDiv';
 import Button from '../Button/Button';
 import classes from './FormInput.module.css';
 
-const entriesObject = {};
+const entryObject = {};
 
 const FormInput = () => {
 
@@ -27,25 +27,28 @@ const FormInput = () => {
         }
       ]; 
 
-    // entriesObject = { Username: '', Age: '', Occupation: '' }
+    // entryObject = { Username: '', Age: '', Occupation: '' }
     for (const formTitle of formTitles) {
-      entriesObject[formTitle.label] = '';
+      entryObject[formTitle.label] = '';
     }
 
-    const [userInput, setUserInput] = useState(entriesObject);
+    const [userInput, setUserInput] = useState(entryObject);
+    const [submits, setSubmits] = useState([]);
 
     const inputEntryHandler = (inputEntry, inputName) => {
         setUserInput(prevState => {
-          return {...prevState, [inputName]: inputEntry};
+          return {...prevState, [inputName]: inputEntry, ID: Math.random().toString()};
         });
     };
 
-    console.log(userInput);
-
     const formSubmitHandler = event => {
         event.preventDefault();
-        console.log("Button Clicked!");
+        setSubmits(prevState => {
+          return [...prevState, userInput];
+        });
     };
+
+    console.log(submits);
 
     const allInputs = formTitles.map(formText => (
         <InputDiv 
