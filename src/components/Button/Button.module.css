@@ -3,7 +3,6 @@
 }
 
 .button {
-	background-color:#4a7bc8;
 	border-radius:14px;
 	border:1px solid #4a7bc8;
 	display:inline-block;
@@ -24,4 +23,8 @@
 .button:active {
 	position:relative;
 	top:1px;
+}
+
+.blue {
+	background-color:#4a7bc8; 
 }
