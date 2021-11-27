@@ -11,7 +11,7 @@ const InputDiv = (props) => {
     return (
         <div className={classes.div}>
             <label>{props.formInfo.label}</label>
-            <input onChange={inputChangeHandler} type={props.formInfo.input} />
+            <input value={props.inputControlledValue} onChange={inputChangeHandler} type={props.formInfo.input} />
         </div>
     );
 }

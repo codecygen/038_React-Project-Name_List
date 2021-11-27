@@ -46,15 +46,20 @@ const FormInput = () => {
         setSubmits(prevState => {
           return [...prevState, userInput];
         });
+
+        // userInput is reset here
+        setUserInput(entryObject);
     };
 
     console.log(submits);
+    console.log(userInput);
 
-    const allInputs = formTitles.map(formText => (
+    const allInputs = formTitles.map(formTitle => (
         <InputDiv 
-            key={formText.key} 
+            key={formTitle.key} 
             inputEntryFunc={inputEntryHandler} 
-            formInfo={formText} 
+            formInfo={formTitle} 
+            inputControlledValue={userInput[formTitle.label]}
         />
     ));
 
