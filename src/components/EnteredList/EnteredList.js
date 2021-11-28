@@ -6,8 +6,7 @@ const EnteredList = () => {
     return (
         <div className={classes.div}>
             <h2>Added Users</h2>
-            <div><li>1</li> <Button>Example</ Button></div>
-            
+            <div><li>1</li> <Button color="red">Delete</ Button></div>  
             <li>1</li>
             <li>1</li>
             <li>1</li>

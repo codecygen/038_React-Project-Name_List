@@ -4,7 +4,6 @@
 
 .button {
 	border-radius:14px;
-	border:1px solid #4a7bc8;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
@@ -15,11 +14,6 @@
 	text-shadow:0px 1px 0px #2f6627;
 }
 
-.button:hover {
-	background-color:#adbfdb;
-	color: black;
-}
-
 .button:active {
 	position:relative;
 	top:1px;
@@ -27,4 +21,20 @@
 
 .blue {
 	background-color:#4a7bc8; 
+	border:1px solid #4a7bc8;
+}
+
+.blue:hover {
+	background-color:#adbfdb;
+	color: black;
+}
+
+.red {
+	background-color:#c8634a;
+	border:1px solid #c8634a;
+}
+
+.red:hover {
+	background-color:#cf7058;
+	color: black;
 }

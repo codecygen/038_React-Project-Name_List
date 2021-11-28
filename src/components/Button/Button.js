@@ -8,7 +8,7 @@ const Button = (props) => {
         <div className={classes.div}>
             <button 
                 type="submit" 
-                className={`${classes.button} ${colorClass}`}>
+                className={`${classes['button']} ${classes[`${props.color}`]}`}>
                     {props.children}
             </button>
         </div>
