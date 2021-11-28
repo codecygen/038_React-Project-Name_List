@@ -6,14 +6,13 @@ function App() {
 
   const [inputList, setInputList] = useState([]);
 
-  const inputListHandler = (submittedList) => {
-    // console.log(submittedList);
+  const inputListHandler = (newInput) => {
     setInputList(prevState => {
-      return [...prevState, submittedList];
+      return [...prevState, newInput];
     });
-    // console.log(inputList);
   };
 
+  console.log(inputList);
 
   return (
     <>

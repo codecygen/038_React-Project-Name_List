@@ -33,7 +33,6 @@ const FormInput = (props) => {
     }
 
     const [userInput, setUserInput] = useState(entryObject);
-    const [submits, setSubmits] = useState([]);
 
     const inputEntryHandler = (inputEntry, inputName) => {
         setUserInput(prevState => {
@@ -43,18 +42,11 @@ const FormInput = (props) => {
 
     const formSubmitHandler = event => {
         event.preventDefault();
-        setSubmits(prevState => {
-          return [...prevState, userInput];
-        });
-
-        console.log(submits);
-        props.sendInputList(submits);
+        props.sendInputList(userInput);
 
         // userInput is reset here
         setUserInput(entryObject);
     };
-
-    console.log(submits);
 
     const allInputs = formTitles.map(formTitle => (
         <InputDiv 
