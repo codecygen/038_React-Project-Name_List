@@ -5,7 +5,7 @@ import classes from './FormInput.module.css';
 
 const entryObject = {};
 
-const FormInput = () => {
+const FormInput = (props) => {
 
     const formTitles = [
         {
@@ -47,12 +47,14 @@ const FormInput = () => {
           return [...prevState, userInput];
         });
 
+        console.log(submits);
+        props.sendInputList(submits);
+
         // userInput is reset here
         setUserInput(entryObject);
     };
 
     console.log(submits);
-    console.log(userInput);
 
     const allInputs = formTitles.map(formTitle => (
         <InputDiv 
