@@ -1,8 +1,12 @@
 .form {
-   margin: 5rem 8% 2rem;
+   margin: 2rem 8% 2rem;
    height: 100%;
    background-color: #222442;
    padding: 1rem 5rem 3rem;
    border-radius: 2rem;
    box-sizing: border-box;
+}
+
+.form div {
+   margin-top: 2rem;
 }

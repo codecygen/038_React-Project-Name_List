@@ -66,7 +66,9 @@ const FormInput = () => {
     return (
         <form onSubmit={formSubmitHandler} className={classes.form}>
             {allInputs}
-            <Button color="blue">Add User</ Button>
+            <div>
+              <Button color="blue">Add User</ Button>
+            </div>
         </form>
     );
 }

@@ -4,13 +4,25 @@ import Button from '../Button/Button';
 
 const EnteredList = () => {
     return (
-        <div className={classes.div}>
+        <section className={classes.div}>
             <h2>Added Users</h2>
-            <div><li>1</li> <Button color="red">Delete</ Button></div>  
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
-        </div>
+            <div>
+                <li>1dskgjsogjsodiguipasioguoisadhgiosdgujl</li>
+                <Button color="red">Delete</ Button>
+            </div>
+            <div>
+                <li>1dskgjsogjsodiguipasioguoisadhgiosdgujl</li>
+                <Button color="red">Delete</ Button>
+            </div>
+            <div>
+                <li>1dskgjsogjsodiguipasioguoisadhgiosdgujl</li>
+                <Button color="red">Delete</ Button>
+            </div>
+            <div>
+                <li>1dskgjsogjsodiguipasioguoisadhgiosdgujl</li>
+                <Button color="red">Delete</ Button>
+            </div>
+        </section>
     );
 }
 
