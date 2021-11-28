@@ -7,6 +7,7 @@ function App() {
   const [inputList, setInputList] = useState([]);
 
   const inputListHandler = (newInput) => {
+
     setInputList(prevState => {
       return [...prevState, newInput];
     });

@@ -36,13 +36,25 @@ const FormInput = (props) => {
 
     const inputEntryHandler = (inputEntry, inputName) => {
         setUserInput(prevState => {
-          return {...prevState, [inputName]: inputEntry, ID: Math.random().toString()};
+          return {...prevState, [inputName]: inputEntry};
         });
     };
 
     const formSubmitHandler = event => {
         event.preventDefault();
-        props.sendInputList(userInput);
+
+        let stringizedInput = '';
+
+        for (const key in userInput) {
+          stringizedInput = `${stringizedInput}, ${userInput[key]}`;
+        }
+
+        let modifiedInput = {
+          text: stringizedInput.slice(2),
+          id: Math.random().toString()
+        };
+
+        props.sendInputList(modifiedInput);
 
         // userInput is reset here
         setUserInput(entryObject);
