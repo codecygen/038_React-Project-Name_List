@@ -14,8 +14,6 @@ function App() {
   };
 
   const deleteRequestHandler = (deleteRequestObjectId) => {
-    console.log(inputList);
-    console.log(deleteRequestObjectId);
     setInputList(prevInputList => {
       const updatedInputList = prevInputList.filter(singleObject => singleObject.id !== deleteRequestObjectId);
       return updatedInputList;

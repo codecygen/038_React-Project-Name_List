@@ -10,7 +10,7 @@ const EnteredList = (props) => {
 
     let allList = (
         <p style={{textAlign: 'center', fontSize: '1.25rem', fontStyle: 'italic'}}>
-            Nothing entered yet..
+            Nothing entered yet...
         </p>
     );
 
