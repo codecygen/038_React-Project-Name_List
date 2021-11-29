@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import InputDiv from './InputDiv';
 import Button from '../Button/Button';
 import classes from './FormInput.module.css';
+import WarningUI from '../WarningUI/WarningUI';
 
 const entryObject = {};
 
@@ -39,9 +40,17 @@ const FormInput = (props) => {
           return {...prevState, [inputName]: inputEntry};
         });
     };
-
+    
     const formSubmitHandler = event => {
         event.preventDefault();
+
+        for (const key in userInput) {
+          if (userInput[key].trim().length === 0) {
+            console.log(key);
+            console.log('You did not provide this input!');
+            return;
+          }
+        }
 
         let stringizedInput = '';
 
@@ -74,12 +83,15 @@ const FormInput = (props) => {
     };
 
     return (
+      <>
+        <WarningUI />
         <form onSubmit={formSubmitHandler} className={classes.form}>
             {allInputs}
             <div>
               <Button deleteList={deleteHandler} color="blue">Add User</ Button>
             </div>
         </form>
+      </>
     );
 }
 
