@@ -13,10 +13,19 @@ function App() {
     });
   };
 
+  console.log(inputList);
+
+  const deleteRequestHandler = (deleteObjectId) => {
+    console.log(deleteObjectId);
+  };
+
   return (
     <>
       <FormInput sendInputList={inputListHandler} />
-      <EnteredList renderList={inputList} />
+      <EnteredList 
+        deleteRequestFunc={deleteRequestHandler} 
+        renderList={inputList} 
+      />
     </>
   );
 }

@@ -4,16 +4,24 @@ import Button from '../Button/Button';
 
 const EnteredList = (props) => {
 
-    const deleteHandler = () => {
-        console.log('hi');
+    const deleteHandler = (deleteRequestId) => {
+        props.deleteRequestFunc(deleteRequestId)
     };
 
-    const allList = props.renderList.map(singleLine => (
-        <div key={singleLine.id}>
-            <li>{singleLine.text}</li>
-            <Button deleteList={deleteHandler} color="red">Delete</ Button>
-        </div> 
-    ));
+    let allList = (
+        <p style={{textAlign: 'center', fontSize: '1.25rem', fontStyle: 'italic'}}>
+            Nothing entered yet..
+        </p>
+    );
+
+    if (props.renderList.length > 0) {
+        allList = props.renderList.map(singleLine => (
+            <div key={singleLine.id}>
+                <li>{singleLine.text}</li>
+                <Button listId={singleLine.id} deleteList={deleteHandler} color="red">Delete</ Button>
+            </div> 
+        ));
+    }
 
     return (
         <section className={classes.div}>

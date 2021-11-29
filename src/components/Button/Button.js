@@ -4,7 +4,7 @@ import classes from './Button.module.css';
 const Button = (props) => {
 
     const clickHandler = () => {
-        props.deleteList();
+        props.deleteList(props.listId);
     };
 
     return (
