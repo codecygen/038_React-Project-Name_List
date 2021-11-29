@@ -3,10 +3,15 @@ import classes from './Button.module.css';
 
 const Button = (props) => {
 
+    const clickHandler = () => {
+        props.deleteList();
+    };
+
     return (
         <button 
             type="submit" 
-            className={`${classes['button']} ${classes[`${props.color}`]}`}>
+            className={`${classes['button']} ${classes[`${props.color}`]}`}
+            onClick={clickHandler}>
                 {props.children}
         </button>
     );

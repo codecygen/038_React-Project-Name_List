@@ -69,11 +69,15 @@ const FormInput = (props) => {
         />
     ));
 
+    const deleteHandler = () => {
+      // This props was needed for only deleting list.
+    };
+
     return (
         <form onSubmit={formSubmitHandler} className={classes.form}>
             {allInputs}
             <div>
-              <Button color="blue">Add User</ Button>
+              <Button deleteList={deleteHandler} color="blue">Add User</ Button>
             </div>
         </form>
     );

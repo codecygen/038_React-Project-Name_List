@@ -13,12 +13,10 @@ function App() {
     });
   };
 
-  console.log(inputList);
-
   return (
     <>
       <FormInput sendInputList={inputListHandler} />
-      <EnteredList />
+      <EnteredList renderList={inputList} />
     </>
   );
 }
