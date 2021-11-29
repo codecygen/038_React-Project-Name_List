@@ -13,10 +13,13 @@ function App() {
     });
   };
 
-  console.log(inputList);
-
-  const deleteRequestHandler = (deleteObjectId) => {
-    console.log(deleteObjectId);
+  const deleteRequestHandler = (deleteRequestObjectId) => {
+    console.log(inputList);
+    console.log(deleteRequestObjectId);
+    setInputList(prevInputList => {
+      const updatedInputList = prevInputList.filter(singleObject => singleObject.id !== deleteRequestObjectId);
+      return updatedInputList;
+    });
   };
 
   return (
