@@ -78,17 +78,13 @@ const FormInput = (props) => {
         />
     ));
 
-    const deleteHandler = () => {
-      // This props was needed for only deleting list.
-    };
-
     return (
       <>
         <WarningUI />
         <form onSubmit={formSubmitHandler} className={classes.form}>
             {allInputs}
             <div>
-              <Button deleteList={deleteHandler} color="blue">Add User</ Button>
+              <Button deleteList={() => {}} color="blue">Add User</ Button>
             </div>
         </form>
       </>
