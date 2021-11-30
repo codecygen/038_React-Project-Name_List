@@ -91,7 +91,7 @@ const FormInput = (props) => {
         <form onSubmit={formSubmitHandler} className={classes.form}>
             {allInputs}
             <div>
-              <Button deleteList={() => {}} color="blue">Add User</ Button>
+              <Button clickAction={() => {}} color="blue">Add User</ Button>
             </div>
         </form>
       </>
@@ -100,11 +100,11 @@ const FormInput = (props) => {
     if (isAllInputEntered === false) {
       finalContent = (
         <>
-          <WarningUI sayHi={popUpMessage} />
+          <WarningUI warningMessage={popUpMessage} />
           <form onSubmit={formSubmitHandler} className={classes.form}>
               {allInputs}
               <div>
-                <Button deleteList={() => {}} color="blue">Add User</ Button>
+                <Button clickAction={() => {}} color="blue">Add User</ Button>
               </div>
           </form>
         </>

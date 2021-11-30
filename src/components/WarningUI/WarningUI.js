@@ -8,9 +8,9 @@ const WarningUI = (props) => {
         <section className={classes.section}>
             <div>
                 <div className={classes.message}>
-                    <h2>{props.sayHi}</h2>
+                    <h2>{props.warningMessage}</h2>
                 </div>
-                <Button deleteList={() => {}} color="red">OK</ Button>
+                <Button clickAction={() => alert('Close the window!')} color="red">OK</ Button>
             </div>
         </section>
     );

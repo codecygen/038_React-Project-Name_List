@@ -18,7 +18,7 @@ const EnteredList = (props) => {
         allList = props.renderList.map(singleLine => (
             <div key={singleLine.id}>
                 <li>{singleLine.text}</li>
-                <Button listId={singleLine.id} deleteList={deleteHandler} color="red">Delete</ Button>
+                <Button listId={singleLine.id} clickAction={deleteHandler} color="red">Delete</ Button>
             </div> 
         ));
     }
