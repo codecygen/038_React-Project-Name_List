@@ -4,29 +4,31 @@ import Button from '../Button/Button';
 import classes from './FormInput.module.css';
 import WarningUI from '../WarningUI/WarningUI';
 
-const entryObject = {};
+
+let popUpMessage = '';
 
 const FormInput = (props) => {
+  const entryObject = {};
 
-    const formTitles = [
-        {
-          label: 'Username',
-          input: 'text',
-          key: 1
-        },
+  const formTitles = [
+      {
+        label: 'Username',
+        input: 'text',
+        key: 1
+      },
     
-        {
-          label: 'Age',
-          input: 'number',
-          key: 2
-        },
+      {
+        label: 'Age',
+        input: 'number',
+        key: 2
+      },
     
-        {
-          label: 'Occupation',
-          input: 'text',
-          key: 3
-        }
-      ]; 
+      {
+        label: 'Occupation',
+        input: 'text',
+        key: 3
+      }
+    ]; 
 
     // entryObject = { Username: '', Age: '', Occupation: '' }
     for (const formTitle of formTitles) {
@@ -34,6 +36,7 @@ const FormInput = (props) => {
     }
 
     const [userInput, setUserInput] = useState(entryObject);
+    const [isAllInputEntered, setIsAllInputEntered] = useState(true);
 
     const inputEntryHandler = (inputEntry, inputName) => {
         setUserInput(prevState => {
@@ -42,31 +45,36 @@ const FormInput = (props) => {
     };
     
     const formSubmitHandler = event => {
-        event.preventDefault();
+      event.preventDefault();
 
-        for (const key in userInput) {
-          if (userInput[key].trim().length === 0) {
-            console.log(key);
-            console.log('You did not provide this input!');
-            return;
+      let stringizedInput = '';
+
+      for (const key in userInput) {
+        stringizedInput = `${stringizedInput}, ${userInput[key]}`;
+      }
+
+      let modifiedInput = {
+        text: stringizedInput.slice(2),
+        id: Math.random().toString()
+      };
+
+      let counter = 1;
+
+      for (const key in userInput) {
+        if (userInput[key].trim().length !== 0) {
+          if (counter === Object.keys(userInput).length) {
+            setIsAllInputEntered(true);
+            // userInput is reset here
+            setUserInput(entryObject);
+            props.sendInputList(modifiedInput);
           }
+        } else {
+          setIsAllInputEntered(false);
+          return(popUpMessage = `"${key}" field left blank. Please fill in all fields.`);
         }
 
-        let stringizedInput = '';
-
-        for (const key in userInput) {
-          stringizedInput = `${stringizedInput}, ${userInput[key]}`;
-        }
-
-        let modifiedInput = {
-          text: stringizedInput.slice(2),
-          id: Math.random().toString()
-        };
-
-        props.sendInputList(modifiedInput);
-
-        // userInput is reset here
-        setUserInput(entryObject);
+        counter++;
+      }
     };
 
     const allInputs = formTitles.map(formTitle => (
@@ -78,15 +86,34 @@ const FormInput = (props) => {
         />
     ));
 
-    return (
+    let finalContent = (
       <>
-        <WarningUI />
         <form onSubmit={formSubmitHandler} className={classes.form}>
             {allInputs}
             <div>
               <Button deleteList={() => {}} color="blue">Add User</ Button>
             </div>
         </form>
+      </>
+    );
+
+    if (isAllInputEntered === false) {
+      finalContent = (
+        <>
+          <WarningUI sayHi={popUpMessage} />
+          <form onSubmit={formSubmitHandler} className={classes.form}>
+              {allInputs}
+              <div>
+                <Button deleteList={() => {}} color="blue">Add User</ Button>
+              </div>
+          </form>
+        </>
+      );
+    }
+
+    return (
+      <>
+        {finalContent}
       </>
     );
 }
