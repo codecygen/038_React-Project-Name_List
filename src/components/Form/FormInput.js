@@ -43,6 +43,10 @@ const FormInput = (props) => {
           return {...prevState, [inputName]: inputEntry};
         });
     };
+
+    const closeWindowHandler = () => {
+      setIsAllInputEntered(true);
+    };
     
     const formSubmitHandler = event => {
       event.preventDefault();
@@ -100,7 +104,7 @@ const FormInput = (props) => {
     if (isAllInputEntered === false) {
       finalContent = (
         <>
-          <WarningUI warningMessage={popUpMessage} />
+          <WarningUI closeWindowFunc={closeWindowHandler} warningMessage={popUpMessage} />
           <form onSubmit={formSubmitHandler} className={classes.form}>
               {allInputs}
               <div>
