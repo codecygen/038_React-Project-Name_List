@@ -14,7 +14,7 @@ const FormInput = (props) => {
       {
         label: 'Username',
         input: 'text',
-        key: 1
+        key: 1,
       },
     
       {
