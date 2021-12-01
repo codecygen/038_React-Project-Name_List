@@ -26,7 +26,7 @@ const FormInput = (props) => {
       {
         label: 'Occupation',
         input: 'text',
-        key: 3,
+        key: 3
       }
     ]; 
 
