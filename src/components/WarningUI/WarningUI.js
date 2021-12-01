@@ -10,7 +10,7 @@ const WarningUI = (props) => {
 
     return(
         <section className={classes.section}>
-            <div>
+            <div className={classes.div}>
                 <div className={classes.message}>
                     <h2>{props.warningMessage}</h2>
                 </div>
