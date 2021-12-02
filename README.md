@@ -1,4 +1,5 @@
-Useful Notes:
+Converting String to Number:
+===
 ```
 const num = '5';
 console.log(typeof(+num));
