@@ -49,29 +49,3 @@
     90%      {opacity: 0;}
     100%    {opacity: 1;}
 }
-
-
-
-
-.div2 {
-    /* background-color: rgba(240, 220, 220, 0.80);
-    color: black;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 1rem;
-    text-align: center;
-    padding: 1.5rem;
-    z-index: 2;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    height: 30vw;
-    width: 50vw; */
-    animation-name: fade-out;
-    animation-duration: 0.45s;
-}
-
-@keyframes fade-out {
-    0%      {opacity: 1; height: 10vw; width: 20vw;}
-    100%    {opacity: 0; height: 30vw; width: 50vw;}
-}
